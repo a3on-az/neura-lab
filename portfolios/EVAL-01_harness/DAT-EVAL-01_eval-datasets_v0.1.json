@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "NeuraMem Triplet Evaluation Schema",
+    "description": "Schema for validating cognitive transmutations and intent invariance.",
+    "type": "object",
+    "properties": {
+        "triplet_id": {
+            "type": "string",
+            "pattern": "^TRP-[0-9]{4}$"
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "project_code": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "authorizing_telos": {
+                    "type": "string"
+                }
+            }
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "episode": {
+                    "type": "string",
+                    "description": "The raw input/event."
+                },
+                "context": {
+                    "type": "string",
+                    "description": "The situational/manifold data."
+                },
+                "shadow": {
+                    "type": "string",
+                    "description": "The transmutation/predicted intent."
+                }
+            },
+            "required": [
+                "episode",
+                "context",
+                "shadow"
+            ]
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "invariance_score": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "roi_stability": {
+                    "type": "number"
+                },
+                "telos_alignment": {
+                    "type": "boolean"
+                }
+            }
+        }
+    },
+    "required": [
+        "triplet_id",
+        "data",
+        "metrics"
+    ]
+}

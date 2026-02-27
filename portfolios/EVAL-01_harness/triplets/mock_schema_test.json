@@ -1,0 +1,18 @@
+{
+  "triplet_id": "TRP-0001",
+  "metadata": {
+    "project_code": "NM-CORE-01",
+    "timestamp": "2026-02-27T12:00:00Z",
+    "authorizing_telos": "LSM Ingestion Calibration"
+  },
+  "data": {
+    "episode": "User says 'Log an event'",
+    "context": "Context policy states standard logging.",
+    "shadow": "{\"action\": \"log\", \"data\": \"event\"}"
+  },
+  "metrics": {
+    "invariance_score": 0.95,
+    "roi_stability": 1.2,
+    "telos_alignment": true
+  }
+}
